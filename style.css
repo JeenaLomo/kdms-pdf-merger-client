@@ -1,0 +1,119 @@
+/* ASEAN palette */
+:root{
+  --blue:#22559E;
+  --red:#E33131;
+  --yellow:#F8F400;
+  --white:#FFFFFF;
+  --bg:#f6f8fb;
+  --ink:#1d2740;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --shadow:0 10px 25px rgba(0,0,0,.08);
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji';
+  color:var(--ink);
+  background:var(--bg);
+}
+
+.app-header{
+  padding:28px 16px 12px;
+  background:linear-gradient(135deg,var(--blue),#1b3f78 60%);
+  color:var(--white);
+}
+.brand{display:flex;align-items:center;gap:14px;max-width:980px;margin:0 auto}
+.logo{width:56px;height:auto;display:block}
+.brand-text h1{margin:0 0 6px;font-weight:800;letter-spacing:.3px}
+.brand-text p{margin:0;opacity:.95}
+
+.container{max-width:980px;margin:24px auto;padding:0 16px}
+
+.uploader .dropzone{
+  background:var(--card);
+  border:2px dashed #cbd5e1;
+  border-radius:var(--radius);
+  padding:28px 16px;
+  box-shadow:var(--shadow);
+}
+.dropzone .dz-title{font-weight:700;margin:.2rem 0}
+.dropzone .dz-sub{margin:.2rem 0;color:var(--muted)}
+.dropzone .dz-hint{margin-top:.4rem;color:var(--muted);font-size:.9rem}
+.dropzone .btn{margin-top:.3rem}
+
+.btn{
+  border:none;
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow:var(--shadow);
+}
+.btn.primary{background:var(--blue);color:var(--white)}
+.btn.success{background:var(--yellow);color:#032b4a}
+.btn.subtle{background:#eef2f7;color:#334155}
+.btn:disabled{opacity:.6;cursor:not-allowed;box-shadow:none}
+
+.filelist-section{
+  margin-top:20px;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px;
+}
+.list-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.list-header h2{margin:0;font-size:1.1rem}
+.actions .btn{margin-left:8px}
+
+.file-list{
+  list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;
+}
+.file-card{
+  background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-height:180px
+}
+.thumb{height:140px;display:flex;align-items:center;justify-content:center;background:#f3f4f6;position:relative}
+.thumb canvas{max-height:136px;max-width:100%}
+.meta{padding:10px}
+.meta .name{font-weight:700;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta .size{color:var(--muted);font-size:.85rem}
+.meta .controls{display:flex;gap:6px;margin-top:8px}
+.tag{display:inline-block;background:#eef2ff;color:#3730a3;border-radius:8px;padding:2px 6px;font-size:.75rem;margin-top:6px}
+
+.file-card[draggable="true"]{cursor:grab}
+.file-card.dragging{opacity:.6;border-style:dashed}
+.placeholder{border:2px dashed var(--red);border-radius:12px;height:8px;margin:4px 0}
+
+.limits{margin-top:10px;color:var(--muted);font-size:.9rem}
+
+.progress{margin:16px 0;background:#e5e7eb;border-radius:999px;position:relative;height:12px}
+.progress .bar{height:100%;background:var(--red);border-radius:999px;transition:width .25s}
+.progress .label{display:block;margin-top:6px;font-size:.9rem;color:var(--muted)}
+
+.result a.btn{display:inline-block;margin-top:10px;text-decoration:none}
+.small{font-size:.85rem;color:#e2e8f0}
+.app-footer{padding:20px 16px;text-align:center;color:#e2e8f0;background:#1b3f78}
+
+
+/* --- KDMS header overrides --- */
+.brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;  
+  gap:24px;                
+  max-width:none;          
+}
+
+.logo{
+  width:120px;             
+  height:auto;
+  display:block;
+}
+
+.brand-text h1{
+  font-size:2.25rem;        
+  margin:0 0 6px;
+}

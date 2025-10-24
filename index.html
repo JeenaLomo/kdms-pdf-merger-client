@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KDMS PDF Merger — Client‑side</title>
+  <meta name="description" content="Merge PDF files entirely in the browser. 100% client‑side. No uploads." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/kdms-logo.png">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <img src="assets/kdms-logo.png" alt="KDMS logo" class="logo" />
+      <div class="brand-text">
+        <h1>KDMS PDF Merger</h1>
+        <p>Merge PDF files <strong>100% client‑side</strong>  → your files never leave the browser.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="uploader">
+      <div class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept="application/pdf" multiple hidden />
+        <div class="dropzone-inner">
+          <p class="dz-title">Drop PDF files here</p>
+          <p class="dz-sub">or</p>
+          <button id="browseBtn" class="btn primary">Choose files</button>
+          <p class="dz-hint">Multi‑file supported • Drag to reorder • First‑page thumbnail preview</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="filelist-section">
+      <div class="list-header">
+        <h2>Selected files</h2>
+        <div class="actions">
+          <button id="clearBtn" class="btn subtle" title="Clear file list">Clear</button>
+          <button id="mergeBtn" class="btn success" disabled>Merge PDFs</button>
+        </div>
+      </div>
+      <ul id="fileList" class="file-list" aria-live="polite"></ul>
+      <div id="limits" class="limits"></div>
+    </section>
+
+    <section class="output-section">
+      <div id="progress" class="progress" hidden>
+        <div id="progressBar" class="bar" style="width:0%"></div>
+        <span id="progressText" class="label">Merging…</span>
+      </div>
+      <div id="result" class="result"></div>
+    </section>
+
+    <footer class="app-footer">
+      <p>By KM Team • Runs in your browser </p>
+      <p class="small">Tip: For best performance, keep totals below ~100MB or ~500 pages (depends on the device).</p>
+    </footer>
+  </main>
+
+  <!-- Libraries via CDN -->
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    // Configure worker for PDF.js
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
